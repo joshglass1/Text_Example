@@ -1,0 +1,21 @@
+﻿<views:MvxWpfView x:Class="TextExample.WPF.Views.TextView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:views="clr-namespace:MvvmCross.Wpf.Views;assembly=MvvmCross.Wpf"
+        xmlns:local="clr-namespace:TextExample.WPF.Views"
+        mc:Ignorable="d"
+        Height="300"
+        Width="300">
+    <StackPanel>
+        <TextBox x:Name="textBoxEdit"
+                 Text="{Binding EditText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock x:Name="textBlockCopy"
+                   Text="{Binding CopyText, Mode=OneWay}"/>
+        <Button x:Name="buttonReset"
+                Content="Reset"
+                Command="{Binding ResetTextCommand}"/>
+    </StackPanel>
+</views:MvxWpfView>
